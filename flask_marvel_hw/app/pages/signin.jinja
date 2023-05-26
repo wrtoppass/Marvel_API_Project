@@ -1,0 +1,20 @@
+{% extends "home.jinja" %}
+
+{% block content  %}
+ <h2>Signin</h2>
+ <form action="" method="post">
+ {{ form.hidden_tag() }}
+ <p>
+    {{ form.username.label }}<br>
+    {{ form.username(size=32) }}
+ </p>
+ <p>
+    {{ form.password.label }}<br>
+    {{ form.password(size=32) }}
+    {% for error in form.password.errors %}
+      <span class="err-msg">{{ error }}</span>
+    {% endfor %}
+ </p>
+ <p>{{ form.submit() }}</p>
+</form>
+{% endblock  %}
